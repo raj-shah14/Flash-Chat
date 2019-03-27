@@ -114,7 +114,7 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
         }
         
         func registerUserInDB (values:[String:AnyObject]) {
-            let ref = Database.database().reference(fromURL: "https://flash-chat-1ad60.firebaseio.com/")
+            let ref = Database.database().reference(fromURL: "https://YOUR_DATABASE_URL.firebaseio.com/")
             let usersRef = ref.child("users").child(Auth.auth().currentUser!.uid)
             usersRef.updateChildValues(values, withCompletionBlock: {
                 (err,ref) in
